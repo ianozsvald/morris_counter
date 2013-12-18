@@ -25,7 +25,7 @@ Usage:
     print mc.get()  # 4 or maybe still 2 or maybe higher
     mc.add()
     print mc.get()  # 8 (or 2 or 4 or more)
-    [mc.add() for n in xrange(1000)]  # add another 1000
+    _ = [mc.add() for n in xrange(1000)]  # add another 1000
     print mc.get()  # 1024 (or more or less by a power of 2, but roughly 1024)
 
     mc = morris_counter.MorrisCounter()
@@ -33,6 +33,10 @@ Usage:
     mc.add()  # add to 0th counter
     mc.add(1)  # add to 1st counter
     print mc.get(1)  # get from 1st counter
+
+    _ = [mc.add(1) for n in xrange(100000)]  # add 100,000
+    print mc.get(1)  # 65536 (or greater/lesser by powers of 2)
+
 
 Tests:
 -----
