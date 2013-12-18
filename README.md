@@ -12,6 +12,7 @@ The constructor will take other type codes (e.g. b'I' for 4 bytes on 64 bit syst
 The counter uses `array.array` so it can hold a large set of counters, see second example below.
 
 Usage:
+-----
 
     import morris_counter
     mc = morris_counter.MorrisCounter()
@@ -32,3 +33,16 @@ Usage:
     mc.add()  # add to 0th counter
     mc.add(1)  # add to 1st counter
     print mc.get(1)  # get from 1st counter
+
+Tests:
+-----
+
+If you have `nose` installed then:
+
+    $ nosetests
+    ...
+    ----------------------------------------------------------------------
+    Ran 3 tests in 0.003s
+
+    OK
+    
